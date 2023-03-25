@@ -1,0 +1,236 @@
+
+
+#include <stdio.h>
+void cube(); //function prototype
+int main( )
+{
+int number = 5;
+cube(); //function call
+}
+
+void cube( ) //function definition with no argument
+{
+int a=5;
+printf("%d", a*a*a);
+}
+
+#include <stdio.h>
+void area(int, int ); //function prototype
+int main( )
+{
+int l,b;
+printf("Enter length and breadth\n");
+scanf("%d %d", &l, &b);
+area(l,b); //function call
+}
+
+void area( int l, int b ) //function definition with one argument
+{
+printf("Area = %d", l*b);
+}
+
+#include <stdio.h>
+int area(int, int ); //function prototype
+int main( )
+{
+int l,b, ar;
+printf("Enter length and breadth\n");
+scanf("%d %d", &l, &b);
+ar = area(l,b); //function call
+printf("Area is %d", ar);
+return 0;
+}
+
+int area( int l, int b ) //function definition with one argument
+{ //with return type
+return l*b;
+}
+
+#include <stdio.h>
+int area(int, int ); //function prototype
+int main( )
+{
+int l,b;
+printf("Enter length and breadth\n");
+scanf("%d %d", &l, &b);
+printf("Area is %d", area(l,b));//function call
+return 0;
+}
+
+int area( int l, int b ) //function definition with one argument
+{ //with return type
+return l*b;
+}
+
+#include<stdio.h>
+void swap(int *a, int *b)
+{
+int t;
+t=*a;
+*a=*b;
+*b=t;
+}
+int main()
+{
+int n1 = 5, n2=7;
+printf("Earlier values: %d %d", n1, n2);
+swap(&n1, &n2);//address of actual arguments is passed
+printf("\nSwapped values: %d %d", n1, n2);
+return 0;
+}
+
+Formatted and Unformatted Functions:-
+#include<stdio.h>
+int main()
+{
+	char ch;
+	ch=getchar(); //it will take many characters but will return only one character 
+	printf("\n%c",ch);
+	return 0;
+}
+
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	char ch;
+	ch=getch(); // it will also take only one character otherwise console will be closed autometically
+	printf("\n%c",ch);
+	return 0;
+}
+
+# getch() will not run without #include<conio.h>. It will give error.
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	char ch;
+	ch=getche(); //it will return twice means echo //it will take only one character otherwise console will be closed autometically
+	printf("\n%c",ch);
+	return 0;
+}
+
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	char ch;
+	ch=getchar();
+	putchar(ch);
+	return 0;
+}
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	char ch[20];
+	gets(ch);
+	puts(ch); //puts is used to display the string
+	return 0;
+}
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	char ch[20];
+	// scanf("%s",ch); //it will take two string but can't recognise two words. So it will return only first string because it can't recognise spaces.
+	gets(ch); // it will understand spaces
+        puts(ch); //puts is used to display the string
+	return 0;
+}
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	float a = 65.89;
+	char ch = a; 
+	// printf("%c",ch); //it will return only ASCII VALUE, thus A
+	printf("%d",ch); // it will return only 65 as it reads only integer values
+	return 0;
+}
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	int a=59, b=78, c=79;
+	float avg= (float)(a+b+c)/300*100; //this is called explicit function conversion
+	printf("%.2f",avg); 
+	return 0;
+}
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	int a;
+	for(a=0;a<20;a++) //now it will run
+	//for(a=0;a++;a<20) // it will execute but will not give any output
+	printf("%d",a);
+	
+	
+	return 0;
+}
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	int a=1;
+	while("yourname")
+	{
+		a++;
+		printf("%d",a); // it will give infinite outputs as there is no condition given on while
+	}
+	
+	
+	return 0;
+}
+
+#include<stdio.h>
+#include<conio.h>
+int main()
+{
+	int a=1;
+	do
+	{
+		a++;
+		printf("%d",a); // it will give value 2 as the condition is given later.
+	} while(0); 
+	
+	
+	return 0;
+}
+
+#include<stdio.h>
+#include<conio.h>
+int add(int a, int b);
+int main()
+{
+	printf("%d",add(5,6));
+	return 0;
+}
+int add(int p, int q){
+        return a+b; // it will give error as a and b is not declared in this scope
+
+	return p+q;
+}
+
+#include<stdio.h>
+#include<conio.h>
+//int add(int a, int b);
+int main()
+{
+	printf("%d",add(5,6));
+	return 0;
+}
+int add(int p, int q){
+
+	return p+q; //It will give error as add prototype is not mentioned
+}
